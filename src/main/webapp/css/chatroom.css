@@ -1,0 +1,29 @@
+﻿#MPN_MINI_BODY{overflow:hidden;height:100%;margin:0;padding:0;}
+#MPN_MINI_S_IFRAME{position:absolute;z-index:7000;background:#fff;width:100%;height:100%;top:0;left:0;border:medium none;}
+#MPN_MINI_CONTENT{z-index:2147483646;position:absolute;right:0;bottom:0;}
+#MPN_MINI_TITLE{position:absolute;cursor:move;width:100%;left:0px;top:0px;}
+#MPN_MINI_MAIN_IFRAME{width:100%;height:100%;}
+#MPN_MINI_IN_BODY{height:100%;overflow:hidden;font-size:12px;position:relative;background-color:transparent;margin:0;padding:0;}
+#MPN_MINI_CHAT{line-height:20px;position:absolute;overflow-x:hidden;overflow-y:auto;word-break:break-all}
+#MPN_MINI_CHAT .evMsg{clear:both;}
+#MPN_MINI_CHAT .inMsg{clear:both;color:blue;}
+#MPN_MINI_CHAT .outMsg{clear:both;color:red;}
+#MPN_MINI_INPUT{position:absolute;border:0;background:none transparent scroll repeat 0 0;overflow:auto;}
+#MPN_MINI_CLOSE,#MPN_MINI_MAX,#MPN_MINI_SEND{position:absolute;cursor:pointer;}
+#MPN_MINI_MAIN{position:absolute;width:100%;left:0px;}
+#MPN_MINI_FUNCTION{position:absolute;}
+#MPN_MINI_CHAT .inMsg .createTime,#MPN_MINI_CHAT .outMsg .createTime{color:#963;font-size:11px;}
+#MPN_MINI_CHAT .inMsg .msgTag,#MPN_MINI_CHAT .outMsg .msgTag{text-indent:24px;}
+
+#MPN_SERVICE_PANEL{margin:0; padding:0;width:298px; height:163px;z-index:2147483647;text-align:center; margin-left:60px;display:none}
+#MPN_SERVICE_TABLE{margin:0 auto; padding:0;width:268px; height:163px;border-collapse:collapse; border-spacing:0;font-family:'Trebuchet MS', Arial, Helvetica, '宋体', '微软雅黑'; font-size:12px;z-index:2147483647;text-align:center}
+#MPN_SERVICE_PANEL label{display:-moz-inline-block;display:inline-block;cursor:pointer;margin:0;padding-left:20px;margin-left:20px;line-height:18px;}
+#MPN_SERVICE_PANEL label.checked{background-position:left bottom;}
+#MPN_SERVICE_TABLE img{border:0}
+#MPN_SERVICE_TABLE_TITLE{margin:0; padding:0;height:34px; overflow:hidden;font-size:13px;color:#124e84;}
+#MPN_SERVICE_TABLE_TITLE span{float:left}
+#MPN_SERVICE_CLOSE{float:right; border:0;}
+#MPN_SERVICE_TABLE_PJ{margin:0; padding:0; height:41px; line-height:41px; vertical-align:middle; color:#434343; overflow:hidden;}
+#MPN_SERVICE_TABLE_CONTENT{margin:0; padding:0;height:46px; overflow:hidden;}
+#MPN_SERVICE_AREA{margin:0; padding:2px;width:259px; height:42px; line-height:15px;color:#434343; border:0;}
+#MPN_SERVICE_BUTTON{display:block; position:relative; margin:0 auto; width:76px; height:22px;padding-top:4px;color:#fff;text-decoration: none;text-align:center;}

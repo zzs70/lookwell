@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+body{}
+.bgfa{ background-color:#f2f2f2;}
+#head{ overflow:visible;}
+.Nh_hbox{ overflow:visible;}
+.Nhead{ height:110px; color:#7c7c7c;  overflow:visible;}
+.head_top{ height:70px; overflow:visible;}
+.Nhead_logo{ width:320px; height:100%;}
+.Nhead_logo a{ display:block; height:100%; width:100%; background: url(../img/logo.png) left center no-repeat;}
+.Nh_iflog{ height:100%; line-height:70px;font-size:12px; overflow:visible;}
+.phoneNumber{ padding-left:13px;background: url(../img/Nh_phone.png) left center no-repeat;}
+.phoneNumber b{padding:0 10px; }
+.Nh_nologin{ padding-left:30px; overflow:visible;}
+.Nh_nologin li{ float:left; padding-left:30px;}
+.Nh_rigest{ color:#ff5a00;}
+.Nh_login{ width:170px; padding-left:20px; font-size:0;  cursor:pointer; position:relative; overflow:visible; }
+.Nh_user{ font-size:12px; vertical-align:middle; padding-right:10px;}
+.Nh_userimg{ vertical-align:middle; border-radius:50%; height:30px; width:30px;}
+.Nh_login i{ font-size:12px; vertical-align:middle;}
+.Nh_usermsg{ position:absolute; top:54px; right:0; width:70px; padding:0 20px; border:solid 1px #ff5a00; display:none; background-color:#fafafa; z-index:102;}
+.Nh_usermsg li{ line-height:30px; height:30px; font-size:12px; padding-left:20px; background-image:url(../img/Nhicon.png); background-repeat:no-repeat;}
+.Nh_usermsg li:hover{ color:#ff5a00;}
+.Nh_perCenter{ background-position:0 8px;  color:#ff5a00;}
+.Nh_off{ background-position:0 -18px;}
+.Nh_login:hover .Nh_usermsg{ display:block;}
+
+
+
+.head_fixed{ height:40px; width:100%; background-color:#f2f2f2;  overflow:visible; /*box-shadow:0 2px 2px #CCC;*/ z-index:1000;}
+.Nn_wrap{ overflow:visible; height:100%; }
+.Nhead_nav{ overflow:visible; height:100%;}
+.Nhead_nav dd{ float:left; line-height:40px; width:142px; text-align:center; font-size:16px; overflow:visible; position:relative;}
+.Nhead_nav .index{ background-color:#ff5a00; color:#FFF;}
+.LineL_list{ position:absolute; left:0; top:40px; width:100%; background-color:#f2f2f2; display:none; z-index:2000; overflow:visible;}
+.LK_join{ color:#7c7c7c;}
+.LineL_list li{color:#7c7c7c; line-height:40px; font-size:14px;}
+.LineL_list li:hover{ color:#ff5a00;}
+.Nhead_nav dd:hover .LineL_list{ display:block;}
+.Nhead_nav dd:hover{ background-color:#ff5a00; color:#FFF;}
+
+/* 登录弹窗样式 */
+.Login_con{ width:390px;  position:fixed; top:50px; left:50%; margin-left:-195px; background-color:#FFF; border-radius:10px; z-index:999; display:none;}
+.Login_warp{ padding:15px 30px 25px;}
+.Login_warp h2{ line-height:66px; font-size:26px; color:#999;}
+.Login_opt{ height:48px; border:solid 1px #999; margin-bottom:18px; position:relative;}
+.Login_icon{ display:inline-block; height:20px; width:20px; margin:0 30px 0 10px; vertical-align:middle;}
+.Login_opt input{ height:100%; line-height:48px; vertical-align:middle; width:200px; font-size:14px;}
+.Login_opt .Login_gvc{ position:absolute; right:0; top:-1px; padding:0 15px; height:50px; background-color:#ff5a00; color:#FFF; font-size:14px; line-height:50px;}
+.Login_remaind{ color:#ff5a00;}
+.Login_btn{ width:100%; height:50px; background-color:#ff5a00; color:#FFF; font-size:20px;}
+.Login_chose{ border-top:solid 1px #c5c5c5; padding:0 30px; background-color:#f5f5f5; height:60px;}
+.Login_chose a{ color:#666666; font-size:16px; line-height:60px;}
+.Login_chose a:hover{ color:#ff5a00;}
+.Login_close{ position:absolute; top:30px; right:30px; height:26px; width:26px;}
+
+.Login_icon,.Login_close{ background-image:url(../../img/head2016/head_icon.png); background-repeat:no-repeat;}
+.Login_bg01{ background-position:0 -44px;}
+.Login_bg02{ background-position:0 -76px;}
+.Login_close{background-position:0 0;}
+
+.loginYzm{ position:absolute; right:0; top:0; height:100%;}
+
+
+.Nh_Rnav{ position:fixed; left:50%; margin-left:610px; width:48px; top:200px; overflow:visible; z-index:102;}
+.Nh_Rnav a{ display:block; width:100%; height:48px; margin-bottom:10px; position:relative; overflow:visible;}
+.RnavBg{background-image:url(../img/nav_right.png); background-repeat:no-repeat;}
+.Nh_Rnav_bg01{ background:url(../img/logo_demon.png) left top no-repeat;}
+.Nh_Rnav_bg02:hover{ background-position:0 0;}
+.Nh_Rnav_bg03:hover{background-position:0 -62px;}
+.Nh_Rnav_bg04:hover{background-position:0 -122px;}
+.Nh_Rnav_bg05:hover{background-position:0 -182px;}
+.Nh_Rnav_bg02{background-position:0 -242px;}
+.Nh_Rnav_bg03{background-position:0 -304px;}
+.Nh_Rnav_bg04{background-position:0 -364px;}
+.Nh_Rnav_bg05{background-position:0 -424px;}
+.back_top{ visibility:hidden;}
+
+
+/* 遮罩层 */
+.head_mask{ position:fixed; left:0; top:0; right:0; bottom:0; background-color:#000; opacity:.5; filter:alpha(opacity=50); display:none; z-index:99;}
+
+
+
+#dialogFeedback2, #dialogFeedback_success2 {position: fixed;width: 520px; left:50%; margin-left:-260px; top:80px;}
+#dialogFeedback2 .dialog-top, #dialogFeedback_success2 .dialog-top {font-size: 18px;height: 40px;line-height: 40px;padding: 0 10px;}
+#dialogFeedback2 .dialog-top span, #dialogFeedback_success2 .dialog-top span {float: left}
+#dialogFeedback2 .dialog-close-button, #dialogFeedback_success2 .dialog-close-button {color: #D4D5D6;cursor: pointer;float: right;height: 28px;margin-top: 3px;text-align: center;width: 25px;}
+#dialogFeedback2 .dialog-body, #dialogFeedback_success2 .dialog-body {background: none repeat scroll 0 0 #FFFFFF;height: 340px;padding: 30px 45px 0;}
+#dialogFeedback2 .button {border: medium none;cursor: pointer;font-size: 18px;font-weight: bold;height: 40px;line-height: 40px;margin: 25px 0 0 10px;width: 200px;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;}
+#dialogFeedback2 .dialog-body p, #dialogFeedback_success2 .dialog-body p {overflow: hidden;}
+#dialogFeedback2 .dialog-body span, #dialogFeedback_success2 .dialog-body span {color: #F06F07;float: left;margin: 10px 5px 0 0;}
+#dialogFeedback2 .qq {float: left;font-size: 14px;height: 20px;line-height: 36px;text-indent: 7px;width: 222px;}
+#dialogFeedback2 .idea {font-size: 14px;height:168px;margin-left: 0;width: 405px;margin-top:15px}
+#dialogFeedback_success2 .in-round {height: 165px;line-height: 30px;font-size:16px;padding:80px 0 0 155px;text-align:left;}
+
+#dialogFeedback2 .dialog-top, #dialogFeedback_success2 .dialog-top {background:#438eb9;color:#fff}
+#dialogFeedback2 .qq {color: #BBBBBB; padding:10px; border:solid 1px #ccc;}
+#dialogFeedback2 .qq.on {color: #000000;}
+#dialogFeedback2 .button {background:#6CA9CB;color: #FFFFFF;}
+#dialogFeedback2 .button:hover{background:#438eb9}
+#dialogFeedback2 .dialog-close-button, #dialogFeedback_success2 .dialog-close-button{background:url("../../img/head/close.jpg") no-repeat center 12px;}
+#dialogFeedback_success2 .in-round{background: url("../../img/head/ask_bg.gif") no-repeat scroll 85px 85px #FFFFFF;color: #737272;}
+#index-invite{background:none !important;bottom:275px}
+#index-invite span{background:url(../img/index/invite-xf.png) no-repeat center top;}
+.app-img{ position:absolute; left:-142px; top:-50px; display:none; z-index:100;}
+.Nh_Rnav_bg04:hover .app-img{ display:block;}
+
+
+/*footer*/
+.footer{background:#4e4e4e; position:relative;min-width:1200px; overflow:visible; /*margin-top:45px;*/}
+.footerSearch{height:38px;padding:8px 0 0 0;background:#438eb9;border-bottom:1px solid #3e3e3e; text-align:center}
+.footerSearch .searchBar{margin:0 auto;}
+.footerFunction{width:984px;margin:0 auto;color:#aaa;padding:30px 0 20px 0;line-height:21px;}
+.footerFunction dt, .footerFunction dd { line-height:21px;}
+.footerFunction dt a, .footerFunction dt { font-weight:bold;}
+.footerFunction dl{float:left;width:100px;}
+.footerFunction dt a:link,.footerFunction dt a:visited{color:#FFF;}
+.footerFunction dt a:hover,.footerFunction dt a:active{color:#fff;}
+.footerFunction dd a:link,.footerFunction dd a:visited{color:#aaa;}
+.footerFunction dd a:hover,.footerFunction dd a:active{color:#fff;}
+
+.footerFunction dl.qualification{width:150px;padding-right:50px;}
+.footerFunction dl.copyright{width:280px;}
+
+.copyrightLink{color:#aaa;}
+.copyrightLink h4 { font-size:18px; line-height:20px; margin:10px 0;}
+.footerFunction dd .copyrightLink a:link,.footerFunction dd .copyrightLink a:visited{color:#aaa;}
+.footerFunction dd .copyrightLink a:hover,.footerFunction dd .copyrightLink a:active{color:#fff;}
+.fr{ float:right;}
