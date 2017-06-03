@@ -34,7 +34,7 @@ body {font:12px/1.6 Verdana, \5FAE\8F6F\96C5\9ED1, Helvetica, sans-serif;}/*é›…é
 .study_data li { width:178px;  height:51px; text-align:center; font-size:14px; color:#000; float:left; display:inline; }
 .study_data li span {line-height:42px; display:block;border:1px solid #f1f3f2; cursor:pointer;}
 .study_data li.index { background:url(../../img/pub/data_bg.png) no-repeat;}
-.study_data li.index span { border-bottom:none; color:#fff;}
+.study_data li.index span { border-bottom:none; color:#000 ;background-color:#198EA1;}
 .study_data li span.load { width:298px; background-color:#198ea1; color:#fff;}
 .data_cons { border:1px solid #eaeaea; width:890px;}
 .data_con { width:430px; margin-top:8px; padding-left:15px;}

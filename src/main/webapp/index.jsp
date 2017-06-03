@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-
+<%
+    pageContext.setAttribute("APP_PATH",request.getContextPath());
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns=" www.w3.org/1999/xhtml">
 <head>
@@ -21,12 +23,12 @@
 
     <link href="/css/common.css" rel="stylesheet" type="text/css"/>
     <link href="/css/new-main.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
 
-    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101136001"
+    <script type="text/javascript" src="/js/qc_loader.js" data-appid="101136001"
             data-redirecturi="http://www.lookwell.com.cn/wap/text.htm" charset="utf-8"></script>
-    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8"
+    <script type="text/javascript" src="/js/qc_loader.js" charset="utf-8"
             data-callback="true"></script>
 
 </head>
@@ -66,9 +68,9 @@
     <!--header开始-->
 
 
-    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101136001"
+    <script type="text/javascript" src="/js/qc_loader.js" data-appid="101136001"
             data-redirecturi="http://www.lookwell.com.cn/wap/text.htm" charset="utf-8"></script>
-    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8"
+    <script type="text/javascript" src="/js/qc_loader.js" charset="utf-8"
             data-callback="true"></script>
 
 
@@ -76,7 +78,7 @@
     <link rel="SHORTCUT ICON" href="http://www.lookwell.com.cn/img/lookwell.ico">
 
     <link type="text/css" rel="stylesheet" href="/css/main.css">
-    <link type="text/css" rel="stylesheet" href="../css/new-main.css">
+    <link type="text/css" rel="stylesheet" href="/css/new-main.css">
     <link type="text/css" rel="stylesheet" href="/css/Nhead.css">
     <meta name="renderer" content="webkit"/>
     <meta name="keywords" content="考研,考研网,考研情报,考研辅导,考研培训,考研英语,考研政治,考研数学"/>
@@ -226,7 +228,7 @@
             </div>
             <div class="Login_opt">
                 <span class="Login_icon Login_bg02"></span>
-                <input name="mimas" id="mimas" type="password"" placeholder="请输入密码">
+                <input name="mimas" id="mimas" type="password" placeholder="请输入密码">
             </div>
             <input class="Login_btn Login_logbtn" onclick="checklogin()" type="button" value="登录">
         </div>
@@ -616,7 +618,7 @@
 
     <div class="topbanner  h-newtb" style="height:392px;">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"
-             style="height:100%; margin-top:;">
+             style="height:100%; margin-top:100%">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -692,12 +694,40 @@
                                             </div>
                                             <div class="right  free_dou">免费</div>
                                             <span class="graw-line">|</span>
-                                            <span class="yui3-u list-tel"></span>
+                                            <span class="yui3-u list-tel"><img src="../img/list-photo.png"/></span>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </li>
+                        <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=19" target="_blank">
+                            <div class="course_img"><img
+                                    src="../img/VideoImg201509101920062060.jpg"
+                                    width="100%"></div>
+                            <div class="course_bottom cursor_click">
+                                <div class="course_info"><h2 class="f16" style="display: block;">考研英语词汇班</h2>
+                                    <div class="couser_info_p" style="display: none;"></div>
+                                    <div class="course_new fix">
+                                        <div class="star left"><span class="blue-star5 left"></span></div>
+                                        <div class="course-leval right" style="display: none;"><span>难度：</span>基础阶段
+                                        </div>
+                                    </div>
+                                    <div class="price fix">
+                                        <div class="left"><span class="course-pepo">9284</span></div>
+                                        <div class="right  free_dou">VIP会员</div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                </div>
+                            </div>
+                        </a>
+                        </li>
+                        <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=33" target="_blank"><div class="course_img"><img src="../img/VideoImg201512241509279270.jpg" width="100%"></div><div class="course_bottom cursor_click"><div class="course_info"><h2 class="f16" style="display: block;">数学强化班-高数-王莉</h2><div class="couser_info_p" style="display: none;">该课程是2016届考研数学的强化课程，适合有一定数学基础的的...</div><div class="course_new fix"><div class="star left"><span class="blue-star5 left"></span></div><div class="course-leval right" style="display: none;"><span>难度：</span>强化阶段</div></div><div class="price fix"><div class="left"><span class="course-pepo">2517</span></div><div class="right  free_dou">VIP会员</div><span class="graw-line">|</span><span class="yui3-u list-tel"></span></div></div></div></a></li>
+                        <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=78" target="_blank"><div class="course_img"><img src="../img/VideoGroupImg2015112710212821280.jpg" width="100%"></div><div class="course_bottom cursor_click"><div class="course_info"><h2 class="f16" style="display: block;">四六级备考方略</h2><div class="couser_info_p" style="display: none;"></div><div class="course_new fix"><div class="star left"><span class="blue-star5 left"></span></div><div class="course-leval right" style="display: none;"><span>难度：</span>基础阶段</div></div><div class="price fix"><div class="left"><span class="course-pepo">468</span></div><div class="right  free_dou">免费</div><span class="graw-line">|</span><span class="yui3-u list-tel"></span></div></div></div></a></li>
+                        <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=7" target="_blank"><div class="course_img"><img src="../img/VideoImg2015070317371437140.jpg" width="100%"></div><div class="course_bottom cursor_click"><div class="course_info"><h2 class="f16" style="display: block;">考研英语（一）真题解析班</h2><div class="couser_info_p" style="display: none;">夏徛荣老师真题精讲，总结命题规律，教你如何掌握得分点，让你英...</div><div class="course_new fix"><div class="star left"><span class="blue-star5 left"></span></div><div class="course-leval right" style="display: none;"><span>难度：</span>强化阶段</div></div><div class="price fix"><div class="left"><span class="course-pepo">3502</span></div><div class="right  free_dou">大师专项</div><span class="graw-line">|</span><span class="yui3-u list-tel"></span></div></div></div></a></li>
+                        <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=11" target="_blank"><div class="course_img"><img src="../img/VideoImg201509101919011910.jpg" width="100%"></div><div class="course_bottom cursor_click"><div class="course_info"><h2 class="f16" style="display: block;">考研英语基础班</h2><div class="couser_info_p" style="display: none;"></div><div class="course_new fix"><div class="star left"><span class="blue-star5 left"></span></div><div class="course-leval right" style="display: none;"><span>难度：</span>基础阶段</div></div><div class="price fix"><div class="left"><span class="course-pepo">8245</span></div><div class="right  free_dou">免费</div><span class="graw-line">|</span><span class="yui3-u list-tel"></span></div></div></div></a></li>
+                        <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=43" target="_blank"><div class="course_img"><img src="../img/VideoGroupImg2015081714195219520.jpg" width="100%"></div><div class="course_bottom cursor_click"><div class="course_info"><h2 class="f16" style="display: block;">考研英语（二）真题解析班</h2><div class="couser_info_p" style="display: none;">夏徛荣老师真题精讲，总结命题规律，教你如何掌握得分点，让你英...</div><div class="course_new fix"><div class="star left"><span class="blue-star5 left"></span></div><div class="course-leval right" style="display: none;"><span>难度：</span>强化阶段</div></div><div class="price fix"><div class="left"><span class="course-pepo">4900</span></div><div class="right  free_dou">大师专项</div><span class="graw-line">|</span><span class="yui3-u list-tel"></span></div></div></div></a></li>
+                        <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=68" target="_blank"><div class="course_img"><img src="../img/VideoImg20151224150604640.jpg" width="100%"></div><div class="course_bottom cursor_click"><div class="course_info"><h2 class="f16" style="display: block;">英语基础班—夏徛荣</h2><div class="couser_info_p" style="display: none;"></div><div class="course_new fix"><div class="star left"><span class="blue-star5 left"></span></div><div class="course-leval right" style="display: none;"><span>难度：</span>基础阶段</div></div><div class="price fix"><div class="left"><span class="course-pepo">1351</span></div><div class="right  free_dou">免费</div><span class="graw-line">|</span><span class="yui3-u list-tel"></span></div></div></div></a></li>
+                        <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=77" target="_blank"><div class="course_img"><img src="../img/VideoGroupImg2015112710202920290.jpg" width="100%"></div><div class="course_bottom cursor_click"><div class="course_info"><h2 class="f16" style="display: block;">大学四级阅读</h2><div class="couser_info_p" style="display: none;"></div><div class="course_new fix"><div class="star left"><span class="blue-star5 left"></span></div><div class="course-leval right" style="display: none;"><span>难度：</span>基础阶段</div></div><div class="price fix"><div class="left"><span class="course-pepo">522</span></div><div class="right  free_dou">免费</div><span class="graw-line">|</span><span class="yui3-u list-tel"></span></div></div></div></a></li>
+                        <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=84" target="_blank"><div class="course_img"><img src="../img/VideoGroupImg2016021814261826180.jpg" width="100%"></div><div class="course_bottom cursor_click"><div class="course_info"><h2 class="f16" style="display: block;">2017寒假集训营-英语</h2><div class="couser_info_p" style="display: none;"></div><div class="course_new fix"><div class="star left"><span class="blue-star5 left"></span></div><div class="course-leval right" style="display: none;"><span>难度：</span>基础阶段</div></div><div class="price fix"><div class="left"><span class="course-pepo">210</span></div><div class="right  free_dou">免费</div><span class="graw-line">|</span><span class="yui3-u list-tel"></span></div></div></div></a></li>
                     </ul>
                     <ul class="hot-course" id="course-couxin">
                         <li class="course_detail">
@@ -723,7 +753,7 @@
                                             </div>
                                             <div class="right  free_dou">无忧计划</div>
                                             <span class="graw-line">|</span>
-                                            <span class="yui3-u list-tel"></span>
+                                            <span class="yui3-u list-tel"><img src="../img/list-photo.png"/></span>
                                         </div>
                                     </div>
                                 </div>
@@ -732,7 +762,7 @@
                         <li class="course_detail">
                             <a href="video_WYpaln.aspx" target="_blank">
                                 <div class="course_img">
-                                    <img src="../admin/CourseClass/updaloadGroup/VideoImg2017032114272727270.jpg"
+                                    <img src="../img/VideoImg2017032114272727270.jpg"
                                          width="100%">
                                 </div>
                                 <div class="course_bottom cursor_click">
@@ -754,7 +784,7 @@
                                             </div>
                                             <div class="right  free_dou">无忧计划</div>
                                             <span class="graw-line">|</span>
-                                            <span class="yui3-u list-tel"></span>
+                                            <span class="yui3-u list-tel"><img src="../img/list-photo.png"/></span>
                                         </div>
                                     </div>
                                 </div>
@@ -763,7 +793,7 @@
                         <li class="course_detail">
                             <a href="VideoCAffiliated.aspx?ccid=109" target="_blank">
                                 <div class="course_img">
-                                    <img src="../admin/CourseClass/updaloadGroup/VideoGroupImg2017021714524152410.jpg"
+                                    <img src="../img/VideoGroupImg2017021714524152410.jpg"
                                          width="100%">
                                 </div>
                                 <div class="course_bottom cursor_click">
@@ -785,13 +815,14 @@
                                             </div>
                                             <div class="right  free_dou">免费</div>
                                             <span class="graw-line">|</span>
-                                            <span class="yui3-u list-tel"></span></div>
+                                            <span class="yui3-u list-tel"><img src="../img/list-photo.png"/></span>
+                                        </div>
                                     </div>
                                 </div>
                             </a></li>
                         <li class="course_detail"><a href="video_WYpaln.aspx" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2017021714474647460.jpg"
+                                    src="../img/VideoImg2017021714474647460.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">18无忧计划-政治</h2>
@@ -803,13 +834,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">2658</span></div>
                                         <div class="right  free_dou">无忧计划</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="video_WYpaln.aspx" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2017021714481748170.jpg"
+                                    src="../img/VideoImg2017021714481748170.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">18无忧计划-数学</h2>
@@ -821,13 +853,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">2361</span></div>
                                         <div class="right  free_dou">无忧计划</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="video_WYpaln.aspx" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2017021714483448340.jpg"
+                                    src="../img/VideoImg2017021714483448340.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">18无忧计划-英语</h2>
@@ -839,13 +872,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">1159</span></div>
                                         <div class="right  free_dou">无忧计划</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=104" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2017021413162016200.jpg"
+                                    src="../img/VideoImg2017021413162016200.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2018寒假集训营</h2>
@@ -857,13 +891,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">51</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=96" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201611231705565560.jpg"
+                                    src="../img/VideoImg201611231705565560.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017冲刺名师课堂</h2>
@@ -875,13 +910,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">290</span></div>
                                         <div class="right  free_dou">大师专项</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=94" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2016083014491549150.jpg"
+                                    src="../img/VideoImg2016083014491549150.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017考研政治强化班</h2>
@@ -893,13 +929,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">652</span></div>
                                         <div class="right  free_dou">大师专项</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=93" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2016083014582158210.jpg"
+                                    src="../img/VideoImg2016083014582158210.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017考研数学强化班</h2>
@@ -911,7 +948,8 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">265</span></div>
                                         <div class="right  free_dou">大师专项</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
@@ -922,7 +960,7 @@
                     <ul class="hot-course" id="course-coumian">
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=109" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg2017021714524152410.jpg"
+                                    src="../img/VideoGroupImg2017021714524152410.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2018春季集训营</h2>
@@ -934,13 +972,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">36</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=104" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2017021413162016200.jpg"
+                                    src="../img/VideoImg2017021413162016200.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2018寒假集训营</h2>
@@ -952,13 +991,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">51</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=88" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg2016031813565856580.jpg"
+                                    src="../img/VideoGroupImg2016031813565856580.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017考研英语导学-夏徛荣</h2>
@@ -970,13 +1010,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">1691</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=86" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg20160218150707770.jpg"
+                                    src="../img/VideoGroupImg20160218150707770.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017寒假集训营-政治</h2>
@@ -988,13 +1029,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">82</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=85" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg2016021814285128510.jpg"
+                                    src="../img/VideoGroupImg2016021814285128510.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017寒假集训营-数学</h2>
@@ -1006,13 +1048,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">217</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=84" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg2016021814261826180.jpg"
+                                    src="../img/VideoGroupImg2016021814261826180.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017寒假集训营-英语</h2>
@@ -1024,13 +1067,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">210</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=78" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg2015112710212821280.jpg"
+                                    src="../img/VideoGroupImg2015112710212821280.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">四六级备考方略</h2>
@@ -1042,13 +1086,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">466</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=77" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg2015112710202920290.jpg"
+                                    src="../img/VideoGroupImg2015112710202920290.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">大学四级阅读</h2>
@@ -1060,13 +1105,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">522</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=68" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg20151224150604640.jpg" width="100%">
+                                    src="../img/VideoImg20151224150604640.jpg" width="100%">
                             </div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">英语基础班—夏徛荣</h2>
@@ -1078,13 +1124,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">1350</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=60" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201512241507457450.jpg"
+                                    src="../img/VideoImg201512241507457450.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2016考研大纲解析—大纲解析主编</h2>
@@ -1096,7 +1143,8 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">14274</span></div>
                                         <div class="right  free_dou">免费</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
@@ -1104,7 +1152,7 @@
                     <ul class="hot-course" id="course-cVIP">
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=87" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg2016022618461546150.jpg"
+                                    src="../img/VideoGroupImg2016022618461546150.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2016考研英语复试课程-王晓晨</h2>
@@ -1116,13 +1164,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">338</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=73" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201512241504154150.jpg"
+                                    src="../img/VideoImg201512241504154150.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">政治冲刺班-史纲要-王吉</h2>
@@ -1134,13 +1183,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">1678</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=72" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg201511171347084780.jpg"
+                                    src="../img/VideoGroupImg201511171347084780.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">政治冲刺班毛中特+思修法基-王皓</h2>
@@ -1152,13 +1202,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">1716</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=71" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2015113012364836480.jpg"
+                                    src="../img/VideoImg2015113012364836480.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">政治冲刺-马原理-徐之明</h2>
@@ -1170,13 +1221,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">2147</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=70" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201512241500260260.jpg"
+                                    src="../img/VideoImg201512241500260260.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">英语冲刺串讲班—夏徛荣</h2>
@@ -1188,13 +1240,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">1657</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=67" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201511301302162160.jpg"
+                                    src="../img/VideoImg201511301302162160.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">
@@ -1207,13 +1260,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">1665</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=57" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201512241505205200.jpg"
+                                    src="../img/VideoImg201512241505205200.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">政治强化班-思修法基 宋高芬</h2>
@@ -1225,13 +1279,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">1579</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=56" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201512241501511510.jpg"
+                                    src="../img/VideoImg201512241501511510.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">英语强化班-写作-夏徛荣</h2>
@@ -1243,13 +1298,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">3260</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=55" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201512241503383380.jpg"
+                                    src="../img/VideoImg201512241503383380.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">英语强化班-完型-夏徛荣</h2>
@@ -1261,13 +1317,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">2334</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=54" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201512241502522520.jpg"
+                                    src="../img/VideoImg201512241502522520.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">英语强化班-翻译-夏徛荣</h2>
@@ -1279,7 +1336,8 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">3150</span></div>
                                         <div class="right  free_dou">VIP会员</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
@@ -1297,13 +1355,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">173</span></div>
                                         <div class="right  free_dou">无忧计划</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="video_WYpaln.aspx" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2017032114272727270.jpg"
+                                    src="../img/VideoImg2017032114272727270.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">18无忧-逻辑写作</h2>
@@ -1316,13 +1375,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">68</span></div>
                                         <div class="right  free_dou">无忧计划</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="video_WYpaln.aspx" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2017021714474647460.jpg"
+                                    src="../img/VideoImg2017021714474647460.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">18无忧计划-政治</h2>
@@ -1334,13 +1394,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">2658</span></div>
                                         <div class="right  free_dou">无忧计划</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="video_WYpaln.aspx" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2017021714481748170.jpg"
+                                    src="../img/VideoImg2017021714481748170.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">18无忧计划-数学</h2>
@@ -1352,13 +1413,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">2361</span></div>
                                         <div class="right  free_dou">无忧计划</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="video_WYpaln.aspx" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2017021714483448340.jpg"
+                                    src="../img/VideoImg2017021714483448340.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">18无忧计划-英语</h2>
@@ -1370,13 +1432,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">1159</span></div>
                                         <div class="right  free_dou">无忧计划</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=96" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg201611231705565560.jpg"
+                                    src="../img/VideoImg201611231705565560.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017冲刺名师课堂</h2>
@@ -1388,13 +1451,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">290</span></div>
                                         <div class="right  free_dou">大师专项</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=94" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2016083014491549150.jpg"
+                                    src="../img/VideoImg2016083014491549150.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017考研政治强化班</h2>
@@ -1406,13 +1470,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">652</span></div>
                                         <div class="right  free_dou">大师专项</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=93" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2016083014582158210.jpg"
+                                    src="../img/VideoImg2016083014582158210.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017考研数学强化班</h2>
@@ -1424,13 +1489,14 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">265</span></div>
                                         <div class="right  free_dou">大师专项</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail"><a href="VideoCAffiliated.aspx?ccid=92" target="_blank">
                             <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoImg2016080813324132410.jpg"
+                                    src="../img/VideoImg2016080813324132410.jpg"
                                     width="100%"></div>
                             <div class="course_bottom cursor_click">
                                 <div class="course_info"><h2 class="f16" style="display: block;">2017考研英语强化班</h2>
@@ -1442,28 +1508,31 @@
                                     <div class="price fix">
                                         <div class="left"><span class="course-pepo">199</span></div>
                                         <div class="right  free_dou">大师专项</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
+                                        <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                            src="../img/list-photo.png"/></span></div>
                                 </div>
                             </div>
                         </a></li>
                         <li class="course_detail">
                             <a href="VideoCAffiliated.aspx?ccid=91" target="_blank">
-                            <div class="course_img"><img
-                                    src="../admin/CourseClass/updaloadGroup/VideoGroupImg201608011337053750.jpg"
-                                    width="100%"></div>
-                            <div class="course_bottom cursor_click">
-                                <div class="course_info"><h2 class="f16" style="display: block;">无忧计划-431金融</h2>
-                                    <div class="couser_info_p" style="display: none;"></div>
-                                    <div class="course_new fix">
-                                        <div class="star left"><span class="blue-star5 left"></span></div>
-                                        <div class="course-leval right" style="display:none;"><span>难度：</span>基础阶段</div>
+                                <div class="course_img"><img
+                                        src="../img/VideoGroupImg201608011337053750.jpg"
+                                        width="100%"></div>
+                                <div class="course_bottom cursor_click">
+                                    <div class="course_info"><h2 class="f16" style="display: block;">无忧计划-431金融</h2>
+                                        <div class="couser_info_p" style="display: none;"></div>
+                                        <div class="course_new fix">
+                                            <div class="star left"><span class="blue-star5 left"></span></div>
+                                            <div class="course-leval right" style="display:none;"><span>难度：</span>基础阶段
+                                            </div>
+                                        </div>
+                                        <div class="price fix">
+                                            <div class="left"><span class="course-pepo">73</span></div>
+                                            <div class="right  free_dou">大师专项</div>
+                                            <span class="graw-line">|</span><span class="yui3-u list-tel"><img
+                                                src="../img/list-photo.png"/></span></div>
                                     </div>
-                                    <div class="price fix">
-                                        <div class="left"><span class="course-pepo">73</span></div>
-                                        <div class="right  free_dou">大师专项</div>
-                                        <span class="graw-line">|</span><span class="yui3-u list-tel"></span></div>
                                 </div>
-                            </div>
                             </a>
                         </li>
                     </ul>
@@ -1606,208 +1675,51 @@
                 <li style="width:298px;" class="last"><span class="load">真题下载</span></li>
             </ul>
             <input id="Hidden1" name="hdid" type="hidden"/>
-            <div class="data_cons fl" tog="1" id="con_3">
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">2017考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">2726</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
 
+            <div class="data_cons fl" tog="1" id="con_3" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/zhengzhi02.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=252&amp;liank=2&amp;cname=%u653F%u6CBB&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 政治 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">27</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1767)">1997年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1770)">1998年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1773)">1999年考研政治真题解析</a></li></ul></div><div class="data_con fl"><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1775)">2000年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1779)">2001年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1781)">2002年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1784)">2003年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1787)">2004年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1791)">2005年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1802)">2010年考研政治真题及解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1807)">2012年考研政治真题及解析</a></li></ul></div></div>
 
-                </div>
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">2515考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">2726</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
+            <div class="data_cons fl" tog="1" id="con_4" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/English.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&amp;liank=2&amp;cname=%u82F1%u8BED%u4E00&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 英语一 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">21</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1641)">2003年英语一真题</a></li><li><a href="javascript:void(0)" onclick="downlo(1642)">2004年研究生考试英语一</a></li><li><a href="javascript:void(0)" onclick="downlo(1643)">2005年研究生考试英语一</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="img/English01.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&amp;liank=2&amp;cname=%u82F1%u8BED%u4E8C&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 英语二 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">8</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(2044)">2006考研英语二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2045)">2009考研英语二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2047)">2010考研英语二真题</a></li></ul></div></div>
 
+            <div class="data_cons fl" tog="1" id="con_5" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/Math.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&amp;liank=2&amp;cname=%u6570%u5B66%u4E00&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 数学一 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">31</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1723)">1987年全国硕士研究生入学考试数学一真题</a></li><li><a href="javascript:void(0)" onclick="downlo(1724)">1991年全国硕士研究生入学考试数学一真题</a></li><li><a href="javascript:void(0)" onclick="downlo(1725)">1992年全国硕士研究生入学考试数学一真题</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="img/Math01.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&amp;liank=2&amp;cname=%u6570%u5B66%u4E8C&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 数学二 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">22</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(2010)">2003年全国研究生考试数学二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2011)">2004全国硕士研究生入学考试数学二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2012)">2005全国硕士研究生入学考试数学二真题</a></li></ul></div></div>
 
-                </div>
-            </div>
+            <div class="data_cons fl" tog="1" id="con_6" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/TK.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=907&amp;liank=0&amp;cname=%u8BA1%u7B97%u673A&amp;stype=0&amp;rdate=0" target="_blank">统考/联考专业课 &gt; 计算机 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">7</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1640)">2013年全国研究生统一入学考试中医综合考试真题.doc</a></li><li><a href="javascript:void(0)" onclick="downlo(1663)">2009年全国硕士研究生入学考试计算机统考试题及参考答案</a></li><li><a href="javascript:void(0)" onclick="downlo(1664)">2011全国硕士研究生入学考试计算机统考试题及参考答案.zip</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="img/TK01.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=909&amp;liank=0&amp;cname=%u6559%u80B2%u5B66&amp;stype=0&amp;rdate=0" target="_blank">统考/联考专业课 &gt; 教育学 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">6</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1668)">2012年考研教育学统考真题及答案解析.zip</a></li><li><a href="javascript:void(0)" onclick="downlo(1669)">2011年考研教育学统考真题及答案解析.zip</a></li><li><a href="javascript:void(0)" onclick="downlo(1670)">2013年考研教育学统考真题及答案解析.zip</a></li></ul></div></div>
 
-            <div class="data_cons fl" tog="1" id="con_4" style="display:none">
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">4415考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">2726</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                </div>
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">2015考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">2726</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                </div>
-            </div>
-
-            <div class="data_cons fl" tog="1" id="con_5" style="display:none">
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">2015考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">2726</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                </div>
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">2015考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">2726</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                </div>
-            </div>
-
-            <div class="data_cons fl" tog="1" id="con_6" style="display:none">
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">2015考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">44726</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                </div>
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">2015考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">2726</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                </div>
-            </div>
-
-            <div class="data_cons fl" tog="1" id="con_7" style="display:none">
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">2015考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">2556</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                </div>
-                <div class="data_con fl">
-                    <div class="imgbox">
-                        <img src="img/img_1.jpg"/>
-                        <div class="fl"><h4><a href="#" target="_blank">2015考研心理学真题集学真题集</a></h4><h4><a href="#"
-                                                                                                        target="_blank"><font
-                                style="color:#de8d55">2726</font>份资料</a></h4></div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                </div>
-            </div>
+            <div class="data_cons fl" tog="1" id="con_7" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/FTK.jpg"><div class="fl"><h4><a href="#" target="_blank">非统考/非联考专业课 &gt; 法学 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">379</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(904)">北京大学1997年法学综合卷考研试题</a></li><li><a href="javascript:void(0)" onclick="downlo(906)">北京大学1998年法学综合卷考研试题</a></li><li><a href="javascript:void(0)" onclick="downlo(908)">北京大学1999年法学综合卷考研试题</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="img/FTK01.jpg"><div class="fl"><h4><a href="#" target="_blank">非统考/非联考专业课 &gt; 医学技术 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">15</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1015)">吉林大学外科学2001真题.pdf</a></li><li><a href="javascript:void(0)" onclick="downlo(1402)">007 广州医学院病理学（A）2003真题.zip</a></li><li><a href="javascript:void(0)" onclick="downlo(1404)">009 广州医学院病理学2001真题.zip</a></li></ul></div></div>
 
             <div class="fr" style="width:308px">
-                <table border="1" width="296px" style="text-align:center; border-collapse:collapse" class="table_sy fr">
-                    <tr>
-                        <th>年份</th>
-                        <th>英语一</th>
-                        <th>英语二</th>
-                        <th>数学一</th>
-                        <th>数学二</th>
-                    </tr>
-                    <tr>
-                        <td>2015年</td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&liank=2&cname=%u82F1%u8BED%u4E00&stype=0&rdate=2015"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&liank=2&cname=%u82F1%u8BED%u4E8C&stype=0&rdate=2015"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&liank=2&cname=%u6570%u5B66%u4E00&stype=0&rdate=2015"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&liank=2&cname=%u6570%u5B66%u4E8C&stype=0&rdate=2015"
-                               target="_blank">下载</a></td>
+                <table style="text-align:center; border-collapse:collapse" class="table_sy fr" width="296px" border="1">
+                    <tbody><tr><th>年份</th><th>英语一</th><th>英语二</th><th>数学一</th><th>数学二</th></tr>
+                    <tr><td>2015年</td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&amp;liank=2&amp;cname=%u82F1%u8BED%u4E00&amp;stype=0&amp;rdate=2015" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&amp;liank=2&amp;cname=%u82F1%u8BED%u4E8C&amp;stype=0&amp;rdate=2015" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&amp;liank=2&amp;cname=%u6570%u5B66%u4E00&amp;stype=0&amp;rdate=2015" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&amp;liank=2&amp;cname=%u6570%u5B66%u4E8C&amp;stype=0&amp;rdate=2015" target="_blank">下载</a></td>
                     </tr>
                     <tr>
                         <td>2014年</td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&liank=2&cname=%u82F1%u8BED%u4E00&stype=0&rdate=2014"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&liank=2&cname=%u82F1%u8BED%u4E8C&stype=0&rdate=2014"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&liank=2&cname=%u6570%u5B66%u4E00&stype=0&rdate=2014"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&liank=2&cname=%u6570%u5B66%u4E8C&stype=0&rdate=2014"
-                               target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&amp;liank=2&amp;cname=%u82F1%u8BED%u4E00&amp;stype=0&amp;rdate=2014" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&amp;liank=2&amp;cname=%u82F1%u8BED%u4E8C&amp;stype=0&amp;rdate=2014" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&amp;liank=2&amp;cname=%u6570%u5B66%u4E00&amp;stype=0&amp;rdate=2014" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&amp;liank=2&amp;cname=%u6570%u5B66%u4E8C&amp;stype=0&amp;rdate=2014" target="_blank">下载</a></td>
                     </tr>
                     <tr>
                         <td>2013年</td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&liank=2&cname=%u82F1%u8BED%u4E00&stype=0&rdate=2013"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&liank=2&cname=%u82F1%u8BED%u4E8C&stype=0&rdate=2013"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&liank=2&cname=%u6570%u5B66%u4E00&stype=0&rdate=2013"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&liank=2&cname=%u6570%u5B66%u4E8C&stype=0&rdate=2013"
-                               target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&amp;liank=2&amp;cname=%u82F1%u8BED%u4E00&amp;stype=0&amp;rdate=2013" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&amp;liank=2&amp;cname=%u82F1%u8BED%u4E8C&amp;stype=0&amp;rdate=2013" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&amp;liank=2&amp;cname=%u6570%u5B66%u4E00&amp;stype=0&amp;rdate=2013" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&amp;liank=2&amp;cname=%u6570%u5B66%u4E8C&amp;stype=0&amp;rdate=2013" target="_blank">下载</a></td>
                     </tr>
                     <tr>
                         <td>2012年</td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&liank=2&cname=%u82F1%u8BED%u4E00&stype=0&rdate=2012"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&liank=2&cname=%u82F1%u8BED%u4E8C&stype=0&rdate=2012"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&liank=2&cname=%u6570%u5B66%u4E00&stype=0&rdate=2012"
-                               target="_blank">下载</a></td>
-                        <td>
-                            <a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&liank=2&cname=%u6570%u5B66%u4E8C&stype=0&rdate=2012"
-                               target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&amp;liank=2&amp;cname=%u82F1%u8BED%u4E00&amp;stype=0&amp;rdate=2012" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&amp;liank=2&amp;cname=%u82F1%u8BED%u4E8C&amp;stype=0&amp;rdate=2012" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&amp;liank=2&amp;cname=%u6570%u5B66%u4E00&amp;stype=0&amp;rdate=2012" target="_blank">下载</a></td>
+                        <td><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&amp;liank=2&amp;cname=%u6570%u5B66%u4E8C&amp;stype=0&amp;rdate=2012" target="_blank">下载</a></td>
                     </tr>
-                    <tr>
-                        <td colspan="5"><a href="videoindex.aspx">
-                            <真题解析视频
-                        </a>&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;<a href="DataCenter.aspx">更多真题下载></a></td>
-                    </tr>
+                    <tr><td colspan="5"><a href="videoindex.aspx">&lt;真题解析视频</a>　　　　　　<a href="DataCenter.aspx">更多真题下载&gt;</a></td></tr>
 
 
-                </table>
+                    </tbody></table>
 
             </div>
 
@@ -1819,7 +1731,7 @@
     <div class="wBlock8">
         <!-- 微信开始 -->
         <div class="w1200 WXbox">
-            <img src="img/weixin.jpg" alt="微信"/>
+            <img src="../img/weixin.jpg" alt="微信"/>
         </div>
         <!-- 微信结束 -->
     </div>
@@ -1903,7 +1815,7 @@
                 <dt>统计代码</dt>
                 <dd>
                     <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1252990443'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1252990443%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1252990443'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "img/z_stat.php%3Fid%3D1252990443%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
                 </dd>
                 <dd>
                     <script type="text/javascript"
@@ -1948,7 +1860,7 @@
     </script>
 
 
-    <script type="text/javascript" src="js/information.js"></script>
+    <script type="text/javascript" src="/js/information.js"></script>
     <script>
         setTab($("#tabs4"));
         <!-- 热门课程切换 （淡出效果） -->
