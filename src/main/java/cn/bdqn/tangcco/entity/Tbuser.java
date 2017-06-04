@@ -12,36 +12,24 @@ public class Tbuser {
     private String nickname;
 
     private String phone;
-
     private Double ballance;
 
     private Integer integral;
 
     private Integer beanfun;
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public Tbuser() {
+    }
 
     public Tbuser(String password, String phone) {
         this.password = password;
         this.phone = phone;
     }
 
-    @Override
-    public String toString() {
-        return "Tbuser{" +
-                "userid=" + userid +
-                ", roleid=" + roleid +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", phone='" + phone + '\'' +
-                ", ballance=" + ballance +
-                ", integral=" + integral +
-                ", beanfun=" + beanfun +
-                '}';
-    }
 
-    public Integer getUserid() {
-        return userid;
-    }
 
     public void setUserid(Integer userid) {
         this.userid = userid;

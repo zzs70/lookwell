@@ -29,13 +29,13 @@
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
         <!--指定Dao接口生成位置,Mapper接口-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.bdqn.tangcco.county.dao"  targetProject=".\src\main\java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.bdqn.tangcco.user.dao"  targetProject=".\src\main\java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
         <!--table元素表示每个表的生成策略-->
         <!--生成表的名称             Bean名称一定要大写    对应的JavaBean的名称-->
         <!--<table tableName="tbuser" domainObjectName="Tbuser"></table>-->
-        <table tableName="county" domainObjectName="County"></table>
+        <table tableName="tbuser" domainObjectName="Tbuser"></table>
         <!--<table tableName="student" domainObjectName="Student"></table>-->
         <!--<table tableName="grade" domainObjectName="Grade"></table>-->
         <!--<table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >-->

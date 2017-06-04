@@ -15,7 +15,7 @@ public class TestUser extends TestBase{
     private TbuserServices tbuserServices;
     @Test
     public void testLogin(){
-        System.out.println(tbuserServices.login(new Tbuser("123","15110026692")));
+        System.out.println(tbuserServices.login(new Tbuser("123","123")));
         System.out.println("测试成功");
     }
 }

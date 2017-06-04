@@ -1,7 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%
-    pageContext.setAttribute("APP_PATH",request.getContextPath());
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns=" www.w3.org/1999/xhtml">
 <head>
@@ -256,22 +253,23 @@
             <div class="Login_opt">
                 <span class="Login_icon Login_bg02"></span>
                 <input type="text" id="proven" name="proven" placeholder="图形验证码"/>
-                <img class="loginYzm" src="/ashx/tests.ashx" id="picsuiji" width="100" height="40"
+                <img class="loginYzm" src="vcode.jsp" id="picsuiji" width="100" height="40"
                      title="看不清楚换一张"/>
+                <%--<img alt="" src="vcode.jsp">--%>
                 <script type="text/javascript">
                     $("#picsuiji").bind(
                         "click",
                         function () {
-                            $("#picsuiji").attr("src", "/ashx/tests.ashx?id=" + Math.random());
+                            $("#picsuiji").attr("src", "vcode.jsp");
                         }
                     );
                 </script>
             </div>
-            <div class="Login_opt">
-                <span class="Login_icon Login_bg02"></span>
-                <input type="number" id="yanzheng" name="yanzheng" placeholder="验证码">
-                <a id="zphone" onclick="get_mobile_code();" href="javascript:void(0);" class="Login_gvc">获取验证码</a>
-            </div>
+            <%--<div class="Login_opt">--%>
+                <%--<span class="Login_icon Login_bg02"></span>--%>
+                <%--<input type="number" id="yanzheng" name="yanzheng" placeholder="验证码">--%>
+                <%--<a id="zphone" onclick="get_mobile_code();" href="javascript:void(0);" class="Login_gvc">获取验证码</a>--%>
+            <%--</div>--%>
             <input class="Login_btn Login_rgbtn" onclick="checkInfo()" type="button" value="注册">
         </div>
         <div class="Login_chose">
@@ -291,7 +289,6 @@
             <input class="Login_btn" type="button" onclick="get_mobile()" value="发送">
         </div>
         <div class="Login_chose">
-
             <a href="javascript:void(0);" class="Login_back fr" turn="0">返回登录&gt;&gt;</a>
         </div>
         <a href="javascript:void(0);" class="Login_close"></a>
@@ -318,32 +315,27 @@
                 alert("两次输入的密码不一致");
                 return false;
             }
-            if ($('#yanzheng').val() == "") {
-                alert("注册码不可以为空");
-                return false;
-            }
             //document.getElementById('Registered').disabled = true;
-
+            alert($("#proven").val());
+            alert("phone=" + $('#shou').val() + "&password=" + $('#mima').val()+"&proven"+$("#proven").val());
             $.ajax({
-                url: "/wap/logindo2.aspx",
+                url: "/add.controller",
                 type: "post",
-                data: "shou=" + $('#shou').val() + "&mima=" + $('#mima').val() + "&yanzheng=" + $('#yanzheng').val(),
+                data: "phone=" + $('#shou').val() + "&password=" + $('#mima').val()+"&proven="+$("#proven").val(),
                 dataType: "json",
                 success: function (data) {
-                    if (data == "1") {
+                    if (data == "200") {
                         alert('验证码错误！');
                         document.getElementById('Registered').disabled = false;
-
                     }
-
-                    if (data == "0") {
+                    if (data == "100") {
+                        alert("注册成功");
                         location.reload()
                         document.getElementById('Registered').disabled = false;
                     }
-
-
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("错误");
                 }
             });
             return true;
@@ -415,18 +407,20 @@
                 return false;
             }
             $.ajax({
-                url: "/wap/logindo2.aspx",
-                type: "post",
-                data: "shous=" + $('#shous').val() + "&mimas=" + $('#mimas').val(),
-                dataType: "json",
+                url: "/login.controller",
+                type: "POST",
+                data: "phone=" + $('#shous').val()+"&password="+$('#mimas').val(),
                 success: function (data) {
-                    if (data == "1")
+                    if (data == "200")
                         alert('手机号未注册或密码错误！');
-                    else
-                        location.reload()
-
+                    else{
+                        alert("登录成功");
+                        //刷新页面
+                        location.href = location.href;
+                    }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("错误");
                 }
             });
             return true;
@@ -671,7 +665,7 @@
                         <li class="course_detail">
                             <a href="VideoCAffiliated.aspx?ccid=88" target="_blank">
                                 <div class="course_img">
-                                    <img src="img/daohang1.jpg" width="100%">
+                                    <img src="../../../../jj/src/main/webapp/img/daohang1.jpg" width="100%">
                                 </div>
                                 <div class="course_bottom cursor_click">
                                     <div class="course_info">
@@ -680,7 +674,7 @@
                                         <div class="course_new fix">
                                             <div class="star left">
                                                 <span class="blue-star5 left">
-                                                    <img src="img/wj1.jpg"/>
+                                                    <img src="../../../../jj/src/main/webapp/img/wj1.jpg"/>
                                                 </span>
                                             </div>
                                             <div class="course-leval right" style="display: none;">
@@ -1556,27 +1550,27 @@
             <div class="GD-box">
                 <ul class="gd-imglist fl">
                     <li class="show">
-                        <a href="#"><img src="img/item01.jpg" alt="无忧计划"/></a>
+                        <a href="#"><img src="../../../../jj/src/main/webapp/img/item01.jpg" alt="无忧计划"/></a>
 
                     </li>
                     <li>
-                        <a href="#"><img src="img/item02.jpg" alt="无忧计划"/></a>
+                        <a href="#"><img src="../../../../jj/src/main/webapp/img/item02.jpg" alt="无忧计划"/></a>
 
                     </li>
                     <li>
-                        <a href="#"><img src="img/item03.jpg" alt="无忧计划"/></a>
+                        <a href="#"><img src="../../../../jj/src/main/webapp/img/item03.jpg" alt="无忧计划"/></a>
 
                     </li>
                     <li>
-                        <a href="#"><img src="img/item04.jpg" alt="无忧计划"/></a>
+                        <a href="#"><img src="../../../../jj/src/main/webapp/img/item04.jpg" alt="无忧计划"/></a>
 
                     </li>
                     <li>
-                        <a href="#"><img src="img/item05.jpg" alt="无忧计划"/></a>
+                        <a href="#"><img src="../../../../jj/src/main/webapp/img/item05.jpg" alt="无忧计划"/></a>
 
                     </li>
                     <li>
-                        <a href="#"><img src="img/item01.jpg" alt="无忧计划"/></a>
+                        <a href="#"><img src="../../../../jj/src/main/webapp/img/item01.jpg" alt="无忧计划"/></a>
 
                     </li>
                 </ul>
@@ -1613,7 +1607,7 @@
         <div class="zixun w1200">
             <ul class="zx-list clearfix">
                 <li>
-                    <div class="imgdiv"><img src="img/zx-01.jpg" alt=""/></div>
+                    <div class="imgdiv"><img src="../../../../jj/src/main/webapp/img/zx-01.jpg" alt=""/></div>
                     <div class="bgdiv"></div>
                     <div class="textdiv">
                         <div class="texth3">
@@ -1625,7 +1619,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="imgdiv"><img src="img/zx-02.jpg" alt=""/></div>
+                    <div class="imgdiv"><img src="../../../../jj/src/main/webapp/img/zx-02.jpg" alt=""/></div>
                     <div class="bgdiv"></div>
                     <div class="textdiv">
                         <div class="texth3">
@@ -1637,7 +1631,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="imgdiv"><img src="img/zx-03.jpg" alt=""/></div>
+                    <div class="imgdiv"><img src="../../../../jj/src/main/webapp/img/zx-03.jpg" alt=""/></div>
                     <div class="bgdiv"></div>
                     <div class="textdiv">
                         <div class="texth3">
@@ -1676,15 +1670,15 @@
             </ul>
             <input id="Hidden1" name="hdid" type="hidden"/>
 
-            <div class="data_cons fl" tog="1" id="con_3" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/zhengzhi02.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=252&amp;liank=2&amp;cname=%u653F%u6CBB&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 政治 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">27</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1767)">1997年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1770)">1998年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1773)">1999年考研政治真题解析</a></li></ul></div><div class="data_con fl"><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1775)">2000年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1779)">2001年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1781)">2002年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1784)">2003年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1787)">2004年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1791)">2005年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1802)">2010年考研政治真题及解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1807)">2012年考研政治真题及解析</a></li></ul></div></div>
+            <div class="data_cons fl" tog="1" id="con_3" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="../../../../jj/src/main/webapp/img/zhengzhi02.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=252&amp;liank=2&amp;cname=%u653F%u6CBB&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 政治 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">27</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1767)">1997年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1770)">1998年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1773)">1999年考研政治真题解析</a></li></ul></div><div class="data_con fl"><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1775)">2000年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1779)">2001年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1781)">2002年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1784)">2003年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1787)">2004年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1791)">2005年考研政治真题解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1802)">2010年考研政治真题及解析</a></li><li><a href="javascript:void(0)" onclick="downlo(1807)">2012年考研政治真题及解析</a></li></ul></div></div>
 
-            <div class="data_cons fl" tog="1" id="con_4" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/English.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&amp;liank=2&amp;cname=%u82F1%u8BED%u4E00&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 英语一 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">21</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1641)">2003年英语一真题</a></li><li><a href="javascript:void(0)" onclick="downlo(1642)">2004年研究生考试英语一</a></li><li><a href="javascript:void(0)" onclick="downlo(1643)">2005年研究生考试英语一</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="img/English01.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&amp;liank=2&amp;cname=%u82F1%u8BED%u4E8C&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 英语二 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">8</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(2044)">2006考研英语二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2045)">2009考研英语二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2047)">2010考研英语二真题</a></li></ul></div></div>
+            <div class="data_cons fl" tog="1" id="con_4" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="../../../../jj/src/main/webapp/img/English.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=912&amp;liank=2&amp;cname=%u82F1%u8BED%u4E00&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 英语一 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">21</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1641)">2003年英语一真题</a></li><li><a href="javascript:void(0)" onclick="downlo(1642)">2004年研究生考试英语一</a></li><li><a href="javascript:void(0)" onclick="downlo(1643)">2005年研究生考试英语一</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="../../../../jj/src/main/webapp/img/English01.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=913&amp;liank=2&amp;cname=%u82F1%u8BED%u4E8C&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 英语二 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">8</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(2044)">2006考研英语二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2045)">2009考研英语二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2047)">2010考研英语二真题</a></li></ul></div></div>
 
-            <div class="data_cons fl" tog="1" id="con_5" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/Math.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&amp;liank=2&amp;cname=%u6570%u5B66%u4E00&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 数学一 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">31</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1723)">1987年全国硕士研究生入学考试数学一真题</a></li><li><a href="javascript:void(0)" onclick="downlo(1724)">1991年全国硕士研究生入学考试数学一真题</a></li><li><a href="javascript:void(0)" onclick="downlo(1725)">1992年全国硕士研究生入学考试数学一真题</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="img/Math01.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&amp;liank=2&amp;cname=%u6570%u5B66%u4E8C&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 数学二 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">22</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(2010)">2003年全国研究生考试数学二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2011)">2004全国硕士研究生入学考试数学二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2012)">2005全国硕士研究生入学考试数学二真题</a></li></ul></div></div>
+            <div class="data_cons fl" tog="1" id="con_5" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="../../../../jj/src/main/webapp/img/Math.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=914&amp;liank=2&amp;cname=%u6570%u5B66%u4E00&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 数学一 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">31</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1723)">1987年全国硕士研究生入学考试数学一真题</a></li><li><a href="javascript:void(0)" onclick="downlo(1724)">1991年全国硕士研究生入学考试数学一真题</a></li><li><a href="javascript:void(0)" onclick="downlo(1725)">1992年全国硕士研究生入学考试数学一真题</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="../../../../jj/src/main/webapp/img/Math01.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=915&amp;liank=2&amp;cname=%u6570%u5B66%u4E8C&amp;stype=0&amp;rdate=0" target="_blank">公共课 &gt; 数学二 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">22</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(2010)">2003年全国研究生考试数学二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2011)">2004全国硕士研究生入学考试数学二真题</a></li><li><a href="javascript:void(0)" onclick="downlo(2012)">2005全国硕士研究生入学考试数学二真题</a></li></ul></div></div>
 
-            <div class="data_cons fl" tog="1" id="con_6" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/TK.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=907&amp;liank=0&amp;cname=%u8BA1%u7B97%u673A&amp;stype=0&amp;rdate=0" target="_blank">统考/联考专业课 &gt; 计算机 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">7</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1640)">2013年全国研究生统一入学考试中医综合考试真题.doc</a></li><li><a href="javascript:void(0)" onclick="downlo(1663)">2009年全国硕士研究生入学考试计算机统考试题及参考答案</a></li><li><a href="javascript:void(0)" onclick="downlo(1664)">2011全国硕士研究生入学考试计算机统考试题及参考答案.zip</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="img/TK01.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=909&amp;liank=0&amp;cname=%u6559%u80B2%u5B66&amp;stype=0&amp;rdate=0" target="_blank">统考/联考专业课 &gt; 教育学 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">6</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1668)">2012年考研教育学统考真题及答案解析.zip</a></li><li><a href="javascript:void(0)" onclick="downlo(1669)">2011年考研教育学统考真题及答案解析.zip</a></li><li><a href="javascript:void(0)" onclick="downlo(1670)">2013年考研教育学统考真题及答案解析.zip</a></li></ul></div></div>
+            <div class="data_cons fl" tog="1" id="con_6" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="../../../../jj/src/main/webapp/img/TK.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=907&amp;liank=0&amp;cname=%u8BA1%u7B97%u673A&amp;stype=0&amp;rdate=0" target="_blank">统考/联考专业课 &gt; 计算机 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">7</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1640)">2013年全国研究生统一入学考试中医综合考试真题.doc</a></li><li><a href="javascript:void(0)" onclick="downlo(1663)">2009年全国硕士研究生入学考试计算机统考试题及参考答案</a></li><li><a href="javascript:void(0)" onclick="downlo(1664)">2011全国硕士研究生入学考试计算机统考试题及参考答案.zip</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="../../../../jj/src/main/webapp/img/TK01.jpg"><div class="fl"><h4><a href="http://www.lookwell.com.cn/DataList.aspx?pnid=909&amp;liank=0&amp;cname=%u6559%u80B2%u5B66&amp;stype=0&amp;rdate=0" target="_blank">统考/联考专业课 &gt; 教育学 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">6</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1668)">2012年考研教育学统考真题及答案解析.zip</a></li><li><a href="javascript:void(0)" onclick="downlo(1669)">2011年考研教育学统考真题及答案解析.zip</a></li><li><a href="javascript:void(0)" onclick="downlo(1670)">2013年考研教育学统考真题及答案解析.zip</a></li></ul></div></div>
 
-            <div class="data_cons fl" tog="1" id="con_7" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="img/FTK.jpg"><div class="fl"><h4><a href="#" target="_blank">非统考/非联考专业课 &gt; 法学 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">379</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(904)">北京大学1997年法学综合卷考研试题</a></li><li><a href="javascript:void(0)" onclick="downlo(906)">北京大学1998年法学综合卷考研试题</a></li><li><a href="javascript:void(0)" onclick="downlo(908)">北京大学1999年法学综合卷考研试题</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="img/FTK01.jpg"><div class="fl"><h4><a href="#" target="_blank">非统考/非联考专业课 &gt; 医学技术 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">15</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1015)">吉林大学外科学2001真题.pdf</a></li><li><a href="javascript:void(0)" onclick="downlo(1402)">007 广州医学院病理学（A）2003真题.zip</a></li><li><a href="javascript:void(0)" onclick="downlo(1404)">009 广州医学院病理学2001真题.zip</a></li></ul></div></div>
+            <div class="data_cons fl" tog="1" id="con_7" style="display: none;"><div class="data_con fl"><div class="imgbox"><img src="../../../../jj/src/main/webapp/img/FTK.jpg"><div class="fl"><h4><a href="#" target="_blank">非统考/非联考专业课 &gt; 法学 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">379</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(904)">北京大学1997年法学综合卷考研试题</a></li><li><a href="javascript:void(0)" onclick="downlo(906)">北京大学1998年法学综合卷考研试题</a></li><li><a href="javascript:void(0)" onclick="downlo(908)">北京大学1999年法学综合卷考研试题</a></li></ul></div><div class="data_con fl"><div class="imgbox"><img src="../../../../jj/src/main/webapp/img/FTK01.jpg"><div class="fl"><h4><a href="#" target="_blank">非统考/非联考专业课 &gt; 医学技术 资料</a></h4><h4><a href="#" target="_blank"><font style="color:#de8d55">15</font>份资料</a></h4></div><div class="clear"></div></div><ul class="list"><li><a href="javascript:void(0)" onclick="downlo(1015)">吉林大学外科学2001真题.pdf</a></li><li><a href="javascript:void(0)" onclick="downlo(1402)">007 广州医学院病理学（A）2003真题.zip</a></li><li><a href="javascript:void(0)" onclick="downlo(1404)">009 广州医学院病理学2001真题.zip</a></li></ul></div></div>
 
             <div class="fr" style="width:308px">
                 <table style="text-align:center; border-collapse:collapse" class="table_sy fr" width="296px" border="1">
@@ -1930,7 +1924,7 @@
                     }
                     htmlStrj += "<div class='data_con fl'>";
                     htmlStrj += "<div class='imgbox'>";
-                    htmlStrj += "<img src='img/zhengzhi02.jpg'/>";
+                    htmlStrj += "<img src='../../../../jj/src/main/webapp/img/zhengzhi02.jpg'/>";
                     htmlStrj += "<div class='fl'><h4><a href='http://www.lookwell.com.cn/DataList.aspx?pnid=252&liank=2&cname=%u653F%u6CBB&stype=0&rdate=0' target='_blank'>公共课 > 政治 资料</a></h4><h4><a href='#' target='_blank'><font style='color:#de8d55'>" + data.zhengzhicount + "</font>份资料</a></h4></div><div class='clear'></div></div>";
                     htmlStrj += "<ul class='list'>"
                     htmlStrj += zhengzhi;
@@ -1960,7 +1954,7 @@
                     }
                     htmlStrj += "<div class='data_con fl'>";
                     htmlStrj += "<div class='imgbox'>";
-                    htmlStrj += "<img src='img/English.jpg'/>";
+                    htmlStrj += "<img src='../../../../jj/src/main/webapp/img/English.jpg'/>";
                     htmlStrj += "<div class='fl'><h4><a href='http://www.lookwell.com.cn/DataList.aspx?pnid=912&liank=2&cname=%u82F1%u8BED%u4E00&stype=0&rdate=0' target='_blank'>公共课 > 英语一 资料</a></h4><h4><a href='#' target='_blank'><font style='color:#de8d55'>" + data.yingyucount + "</font>份资料</a></h4></div><div class='clear'></div></div>";
                     htmlStrj += "<ul class='list'>"
                     htmlStrj += yingyu;
@@ -1968,7 +1962,7 @@
                     htmlStrj += "</div>";
                     htmlStrj += "<div class='data_con fl'>";
                     htmlStrj += "<div class='imgbox'>";
-                    htmlStrj += "<img src='img/English01.jpg'/>";
+                    htmlStrj += "<img src='../../../../jj/src/main/webapp/img/English01.jpg'/>";
                     htmlStrj += "<div class='fl'><h4><a href='http://www.lookwell.com.cn/DataList.aspx?pnid=913&liank=2&cname=%u82F1%u8BED%u4E8C&stype=0&rdate=0' target='_blank'>公共课 > 英语二 资料</a></h4><h4><a href='#' target='_blank'><font style='color:#de8d55'>" + data.yingyucounts + "</font>份资料</a></h4></div><div class='clear'></div>";
                     htmlStrj += "</div>";
                     htmlStrj += "<ul class='list'>";
@@ -1995,7 +1989,7 @@
                     }
                     htmlStrj += "<div class='data_con fl'>";
                     htmlStrj += "<div class='imgbox'>";
-                    htmlStrj += "<img src='img/Math.jpg'/>";
+                    htmlStrj += "<img src='../../../../jj/src/main/webapp/img/Math.jpg'/>";
                     htmlStrj += "<div class='fl'><h4><a href='http://www.lookwell.com.cn/DataList.aspx?pnid=914&liank=2&cname=%u6570%u5B66%u4E00&stype=0&rdate=0' target='_blank'>公共课 > 数学一 资料</a></h4><h4><a href='#' target='_blank'><font style='color:#de8d55'>" + data.shuxuecount + "</font>份资料</a></h4></div><div class='clear'></div></div>";
                     htmlStrj += "<ul class='list'>"
                     htmlStrj += shuxue;
@@ -2003,7 +1997,7 @@
                     htmlStrj += "</div>";
                     htmlStrj += "<div class='data_con fl'>";
                     htmlStrj += "<div class='imgbox'>";
-                    htmlStrj += "<img src='img/Math01.jpg'/>";
+                    htmlStrj += "<img src='../../../../jj/src/main/webapp/img/Math01.jpg'/>";
                     htmlStrj += "<div class='fl'><h4><a href='http://www.lookwell.com.cn/DataList.aspx?pnid=915&liank=2&cname=%u6570%u5B66%u4E8C&stype=0&rdate=0' target='_blank'>公共课 > 数学二 资料</a></h4><h4><a href='#' target='_blank'><font style='color:#de8d55'>" + data.shuxuecounts + "</font>份资料</a></h4></div><div class='clear'></div>";
                     htmlStrj += "</div>";
                     htmlStrj += "<ul class='list'>";
@@ -2030,7 +2024,7 @@
                     }
                     htmlStrj += "<div class='data_con fl'>";
                     htmlStrj += "<div class='imgbox'>";
-                    htmlStrj += "<img src='img/TK.jpg'/>";
+                    htmlStrj += "<img src='../../../../jj/src/main/webapp/img/TK.jpg'/>";
                     htmlStrj += "<div class='fl'><h4><a href='http://www.lookwell.com.cn/DataList.aspx?pnid=907&liank=0&cname=%u8BA1%u7B97%u673A&stype=0&rdate=0' target='_blank'>统考/联考专业课 > 计算机 资料</a></h4><h4><a href='#' target='_blank'><font style='color:#de8d55'>" + data.tongkaocount + "</font>份资料</a></h4></div><div class='clear'></div></div>";
                     htmlStrj += "<ul class='list'>"
                     htmlStrj += tongkao;
@@ -2038,7 +2032,7 @@
                     htmlStrj += "</div>";
                     htmlStrj += "<div class='data_con fl'>";
                     htmlStrj += "<div class='imgbox'>";
-                    htmlStrj += "<img src='img/TK01.jpg'/>";
+                    htmlStrj += "<img src='../../../../jj/src/main/webapp/img/TK01.jpg'/>";
                     htmlStrj += "<div class='fl'><h4><a href='http://www.lookwell.com.cn/DataList.aspx?pnid=909&liank=0&cname=%u6559%u80B2%u5B66&stype=0&rdate=0' target='_blank'>统考/联考专业课 > 教育学 资料</a></h4><h4><a href='#' target='_blank'><font style='color:#de8d55'>" + data.tongkaocounts + "</font>份资料</a></h4></div><div class='clear'></div>";
                     htmlStrj += "</div>";
                     htmlStrj += "<ul class='list'>";
@@ -2064,7 +2058,7 @@
                     }
                     htmlStrj += "<div class='data_con fl'>";
                     htmlStrj += "<div class='imgbox'>";
-                    htmlStrj += "<img src='img/FTK.jpg'/>";
+                    htmlStrj += "<img src='../../../../jj/src/main/webapp/img/FTK.jpg'/>";
                     htmlStrj += "<div class='fl'><h4><a href='#' target='_blank'>非统考/非联考专业课 > 法学 资料</a></h4><h4><a href='#' target='_blank'><font style='color:#de8d55'>" + data.gongkecount + "</font>份资料</a></h4></div><div class='clear'></div></div>";
                     htmlStrj += "<ul class='list'>"
                     htmlStrj += gongke;
@@ -2072,7 +2066,7 @@
                     htmlStrj += "</div>";
                     htmlStrj += "<div class='data_con fl'>";
                     htmlStrj += "<div class='imgbox'>";
-                    htmlStrj += "<img src='img/FTK01.jpg'/>";
+                    htmlStrj += "<img src='../../../../jj/src/main/webapp/img/FTK01.jpg'/>";
                     htmlStrj += "<div class='fl'><h4><a href='#' target='_blank'>非统考/非联考专业课 > 医学技术 资料</a></h4><h4><a href='#' target='_blank'><font style='color:#de8d55'>" + data.gongkecounts + "</font>份资料</a></h4></div><div class='clear'></div>";
                     htmlStrj += "</div>";
                     htmlStrj += "<ul class='list'>";

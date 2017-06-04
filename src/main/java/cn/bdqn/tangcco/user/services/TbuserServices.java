@@ -8,4 +8,5 @@ import cn.bdqn.tangcco.entity.Tbuser;
 public interface TbuserServices {
     Tbuser login(Tbuser tbuser);
     int addUser(Tbuser tbuser);
+
 }
